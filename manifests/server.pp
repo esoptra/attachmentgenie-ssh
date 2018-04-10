@@ -8,6 +8,7 @@
 # @param accept_env Specifies what environment variables sent by the client will be copied into the session's environ.
 # @param address_family Specifies which address family should be used by sshd(8).
 # @param allow_agent_forwarding Specifies whether ssh-agent forwarding is permitted.
+# @param allow_tcp_forwarding Specifies whether tcp forwarding is permitted.
 # @param allowed_users If specified, login is allowed only for user names that match one of the patterns.
 # @param allowed_groups  If specified, login is allowed only for users whose primary group or supplementary group list matches one of the pattern.
 # @param authorized_keys_file Specifies the file that contains the public keys that can be used for user authentication.
@@ -62,6 +63,7 @@ class ssh::server (
   String $accept_env = $::ssh::params::accept_env,
   String $address_family = $::ssh::params::address_family,
   Enum['yes','no'] $allow_agent_forwarding = $::ssh::params::allow_agent_forwarding,
+  Enum['yes','no'] $allow_tcp_forwarding = $::ssh::params::allow_tcp_forwarding,
   Array $allowed_users = $::ssh::params::allowed_users,
   Array $allowed_groups = $::ssh::params::allowed_groups,
   Array $authorized_keys_file = $::ssh::params::authorized_keys_file,
